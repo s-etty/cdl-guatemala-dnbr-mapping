@@ -1,13 +1,18 @@
-# CDL_FireSeverity
-Repository for CDL Guatemala Fire Severity Analysis Nov 2024
+# Guatemala Fire Severity Mapping
+
+Repository for mapping fire severity in Guatemala in collaboration with The Nature Conservancy and Conservation Data Labs.
 
 ## Requirements
 
-This repo assumes you have already installed R, Python (or other distribution like Anaconda), and RStudio. If you have not installed these tools, please install them before proceeding.
+This repo assumes you have already installed R, Python (or other distributions like Anaconda), and RStudio. If you have not installed these tools, please install them before proceeding.
 
 - [R](https://cran.r-project.org/)
 - [Python](https://www.python.org/)
 - [RStudio Desktop](https://posit.co/download/rstudio-desktop/)
+
+## Clone Repository
+
+To start, clone this repository to your local machine. For instructions on cloning a repo, see this [link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). Alternatively, you can download this repo by selecting the "Download ZIP" option under the Code button.
 
 ## Initial Setup
 
@@ -19,7 +24,7 @@ The code in this repo is dependent on both R packages and Python libraries. Foll
 
 #### Create a Virtual Environment
 
-In a terminal or command shell, navigate to the project directory on your local machine using `cd` or `chdir`. For example, on my machine the command would be `cd /c/Users/<my-username>/Documents/CDL_FireSeverity`.
+In a terminal or command shell, navigate to the project directory on your local machine using `cd` or `chdir`. For example, on my machine the command would be `cd /c/Users/<my-username>/Documents/cdl-guatemala-dnbr-mapping`.
 
 Once in the project directory, create a virtual environment by running the following commands:
 
@@ -59,6 +64,7 @@ Additionally, install `renv` to manage the R packages.
 ```
 install.packages("reticulate")
 install.packages("renv")
+library(renv)
 ```
 
 #### Connect Reticulate to Python
@@ -72,7 +78,7 @@ reticulate::use_virtualenv("<path>/<to>/<your>/<venv>", required = TRUE)
 For example, on my machine, I ran the command:
 
 ```
-reticulate::use_virtualenv("C:/Users/Documents/CDL_FireSeverity/venv", required = TRUE)
+reticulate::use_virtualenv("C:/Users/Documents/cdl-guatemala-dnbr-mapping/venv", required = TRUE)
 ```
 
 To test this was successful, run the following command in an R console:
@@ -93,7 +99,7 @@ First you will need to create a Google Cloud Project and give it Earth Engine ac
 
 ### Connecting Google Earth Engine to this Project
 
-To connect your local version of this project to Google Earth Engine, run the following lines each session in a Python terminal, replacing "project" with the name of your project you created in the step above.
+To confirm your local version of this project can connect to Google Earth Engine, run the following lines in a Python terminal, replacing "project" with the name of the project you created in the step above.
 
 ```
   ee.Authenticate()
@@ -106,6 +112,8 @@ Once you have setup the project following the instructions above once, the follo
 
 1. Open the `.Rproj` file
 2. In a command prompt/terminal window, activate your Python virtual environment ([see instructions above](#activate-virtual-environment))
+
+After running these two steps, your environment is ready to run scripts.
 
 ## Resources
 
